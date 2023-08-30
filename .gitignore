@@ -3,3 +3,4 @@
 .idea
 *.tgz
 node_modules
+types

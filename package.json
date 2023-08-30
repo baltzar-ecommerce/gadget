@@ -2,9 +2,9 @@
   "name": "@baltzar-tech/gadget",
   "version": "1.1.0",
   "description": "",
-  "types": "lib/index.d.ts",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "build": "rm -rf ./lib && tsc"
+    "build": "rm -rf ./dist && rm -rf ./types && tsc --emitDeclarationOnly && webpack && rm -rf ./types"
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/baltzar-ecommerce/gadget#readme",
   "files": [
-    "lib"
+    "dist"
   ],
   "dependencies": {
     "@shopify/polaris": "10.45.0",
@@ -26,6 +26,12 @@
   },
   "devDependencies": {
     "@gadgetinc/react": "^0.12.1",
-    "typescript": "^5.2.2"
+    "dts-bundle-webpack": "^1.0.2",
+    "glob": "^10.3.3",
+    "ts-loader": "^9.4.4",
+    "typescript": "^5.2.2",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-node-externals": "^3.0.0"
   }
 }

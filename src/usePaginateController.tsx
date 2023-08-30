@@ -1,6 +1,6 @@
 import {useCallback, useMemo, useState} from 'react'
 
-interface Parameters {
+interface HookParameters {
     perPage?: number,
     start?: number
 }
@@ -12,13 +12,13 @@ interface Cursor {
     before?: any
 }
 
-type Controller = (cursor: Cursor) => any
+type HookGenerator = (cursor: Cursor) => any
 
-export default function usePaginateController(controller: Controller, parameters: Parameters = {}) {
+export function usePaginateController(generator: HookGenerator, parameters: HookParameters = {}) {
 
     const {perPage} = useMemo(() => {
 
-        const extracted: Parameters = {}
+        const extracted: HookParameters = {}
         extracted.perPage           = parameters.perPage || 50
         // TODO offset based pagination not available yet.
         //extracted.offset = parameters.start ? parameters.start * extracted.perPage : undefined
@@ -29,7 +29,7 @@ export default function usePaginateController(controller: Controller, parameters
     const [cursor, setCursor] = useState<Cursor>({first: perPage})
 
     // using Gadget React hooks to fetch records of inventoryTransferReceipt
-    const paginatedHook = controller(cursor)
+    const paginatedHook = generator(cursor)
     const [{data}]      = paginatedHook
 
     const getNextPage = useCallback(() => {
@@ -54,5 +54,3 @@ export default function usePaginateController(controller: Controller, parameters
     ]
 
 }
-
-

@@ -1,9 +1,9 @@
-import {Box, HorizontalGrid, LegacyCard} from "@shopify/polaris";
+import {Box, HorizontalGrid, LegacyCard} from '@shopify/polaris'
 import {ReactNode, useMemo} from 'react'
 
 type Size = 'oneThird' | 'oneHalf' | 'twoThirds'
 
-export interface Column {
+export interface CardColumn {
     component: ReactNode,
     size?: Size,
     bg?: any
@@ -11,15 +11,11 @@ export interface Column {
 }
 
 export interface TwoColumnCardProps {
-    left: Column,
-    right: Column
+    left: CardColumn,
+    right: CardColumn
 }
 
-/**
- *
- * @param {Column} column
- */
-function useInitComponent(column: Column) {
+function useInitComponent(column: CardColumn) {
 
     return useMemo(() => {
 
@@ -27,25 +23,20 @@ function useInitComponent(column: Column) {
 
         return {
             component: _column.component || null,
-            size: _column.size || 'oneHalf',
-            bg: _column.bg,
-            flush: _column.flush || false
+            size:      _column.size || 'oneHalf',
+            bg:        _column.bg,
+            flush:     _column.flush || false
         }
 
     }, [column])
 
 }
 
-/**
- *
- * @param {TwoColumnCardProps} props
- * @constructor
- */
-export default function TwoColumnCard(props: TwoColumnCardProps) {
+export function TwoColumnCard(props: TwoColumnCardProps) {
 
     const {left, right} = props
 
-    const {component: leftComponent, size: leftSize, bg: leftBg, flush: leftFlush} = useInitComponent(left)
+    const {component: leftComponent, size: leftSize, bg: leftBg, flush: leftFlush}     = useInitComponent(left)
     const {component: rightComponent, size: rightSize, bg: rightBg, flush: rightFlush} = useInitComponent(right)
 
     return <LegacyCard subdued>
@@ -69,5 +60,4 @@ export default function TwoColumnCard(props: TwoColumnCardProps) {
             </Box>
         </HorizontalGrid>
     </LegacyCard>
-
 }
