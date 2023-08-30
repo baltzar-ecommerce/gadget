@@ -16,7 +16,7 @@ const dtsBundleOptions = {
     name: 'main',
     outputAsModuleFolder: true,
     main: './types/**/*.d.ts',
-    out: '../dist/index.d.ts',
+    out: '../index.d.ts',
 };
 
 module.exports = {
@@ -24,6 +24,7 @@ module.exports = {
     entry: entries,
     output: {
         filename: 'index.js',
+        path: __dirname,
         libraryTarget: 'this'
     },
     target: 'node', // <-- Important
