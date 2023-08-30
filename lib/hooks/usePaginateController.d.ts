@@ -9,5 +9,5 @@ interface Cursor {
     before?: any;
 }
 type Controller = (cursor: Cursor) => any;
-export declare function usePaginateController(controller: Controller, parameters?: Parameters): any[];
+export default function usePaginateController(controller: Controller, parameters?: Parameters): any[];
 export {};

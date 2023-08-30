@@ -14,7 +14,7 @@ interface Cursor {
 
 type Controller = (cursor: Cursor) => any
 
-export function usePaginateController(controller: Controller, parameters: Parameters = {}) {
+export default function usePaginateController(controller: Controller, parameters: Parameters = {}) {
 
     const {perPage} = useMemo(() => {
 
