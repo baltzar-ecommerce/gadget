@@ -3,14 +3,14 @@ import {ReactNode, useMemo} from 'react'
 
 type Size = 'oneThird' | 'oneHalf' | 'twoThirds'
 
-export interface CardColumn {
+interface CardColumn {
     component: ReactNode,
     size?: Size,
     bg?: any
     flush?: boolean
 }
 
-export interface TwoColumnCardProps {
+interface TwoColumnCardProps {
     left: CardColumn,
     right: CardColumn
 }

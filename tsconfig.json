@@ -11,10 +11,9 @@
     "forceConsistentCasingInFileNames": true,
     "outDir": "dist",
     "declaration": true,
-    "declarationDir": "./types",
     "jsx": "react-jsx",
   },
-  "include": ["src"],
+  "include": ["src/index.tsx"],
   "exclude": [
     "node_modules"
   ]

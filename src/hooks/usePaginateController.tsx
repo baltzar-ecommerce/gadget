@@ -52,5 +52,4 @@ export function usePaginateController(generator: HookGenerator, parameters: Hook
             onPrevious:  getPreviousPage
         }
     ]
-
 }
