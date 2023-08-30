@@ -1,0 +1,19 @@
+{
+  "name": "baltzar-gadget",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/baltzar-ecommerce/gadget.git"
+  },
+  "author": "Tedy Warsitha <tedy@warsitha.se>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/baltzar-ecommerce/gadget/issues"
+  },
+  "homepage": "https://github.com/baltzar-ecommerce/gadget#readme"
+}
