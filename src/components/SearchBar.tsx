@@ -1,8 +1,18 @@
 import {Box, HorizontalStack, Icon, Popover, TextField} from "@shopify/polaris";
 import {SearchMinor} from "@shopify/polaris-icons";
+import {ReactNode} from 'react'
 
-export function SearchBar({value, onChange, onClose, results, placeholder, hideBorder, asTopBar}) {
+interface Props {
+    value: string
+    onChange: (id: string) => void
+    onClose: () => void
+    results?: ReactNode
+    placeholder?: string
+    hideBorder?: boolean
+    asTopBar?: boolean
+}
 
+export function SearchBar({value, onChange, onClose, results, placeholder, hideBorder, asTopBar}: Props) {
 
     const field = <TextField
         label={'Search'}
