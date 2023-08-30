@@ -16,6 +16,9 @@
     "url": "https://github.com/baltzar-ecommerce/gadget/issues"
   },
   "homepage": "https://github.com/baltzar-ecommerce/gadget#readme",
+  "files": [
+    "lib"
+  ],
   "dependencies": {
     "@shopify/polaris": "10.45.0",
     "react": "^18.2.0",
