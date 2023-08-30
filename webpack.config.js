@@ -42,10 +42,7 @@ module.exports = {
     resolve: {
         extensions: ['.ts', '.tsx', '.js']
     },
-    externals: [nodeExternals()], // <-- Important
-    optimization: {
-        minimize: false
-    },
+    externals: [nodeExternals()],
     plugins: [
         new DtsBundleWebpack(dtsBundleOptions)
     ]
