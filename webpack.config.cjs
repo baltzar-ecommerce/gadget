@@ -7,6 +7,9 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'index.js',
+        library: "baltzar-gadget",
+        libraryTarget: 'umd',
+        umdNamedDefine: true
     },
     module: {
         rules: [
