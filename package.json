@@ -2,8 +2,8 @@
   "name": "@baltzar-tech/gadget",
   "version": "1.4.1",
   "description": "",
-  "main": "index.js",
-  "types": "types/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/types/index.d.ts",
   "scripts": {
     "build": "rm -rf ./dist && webpack"
   },
