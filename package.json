@@ -21,12 +21,16 @@
   "files": [
     "dist"
   ],
-  "devDependencies": {
+  "dependencies": {
     "@gadgetinc/react": "^0.12.1",
     "@shopify/polaris": "10.45.0",
+    "accounting": "^0.4.1",
     "moment": "^2.29.4",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/accounting": "^0.4.2",
     "ts-loader": "^9.4.4",
     "typescript": "^5.2.2",
     "webpack": "^5.88.2",
