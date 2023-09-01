@@ -34,3 +34,19 @@ export function reduceEdges(entity: Entity, callback: Function | undefined = und
     })
 
 }
+
+export function extractIDFromGUID(guid?: string) {
+
+    if (!guid) {
+        return guid
+    }
+
+    const parts = guid.split('/')
+    const id = parts.pop()
+
+    if (!id) {
+        return guid
+    }
+
+    return parseInt(id)
+}
