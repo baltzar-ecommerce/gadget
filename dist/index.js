@@ -1,1 +1,334 @@
-!function(e,r){"object"==typeof exports&&"object"==typeof module?module.exports=r():"function"==typeof define&&define.amd?define("baltzar-gadget",[],r):"object"==typeof exports?exports["baltzar-gadget"]=r():e["baltzar-gadget"]=r()}(self,(()=>(()=>{"use strict";var e={842:(e,r,t)=>{Object.defineProperty(r,"__esModule",{value:!0}),r.EmptyState=void 0;const o=t(997),n=t(905);r.EmptyState=function({children:e,...r}){return(0,o.jsx)(n.Box,{padding:"5",...r,children:(0,o.jsx)(n.Text,{as:"h2",variant:"headingMd",children:e})})}},263:(e,r,t)=>{Object.defineProperty(r,"__esModule",{value:!0}),r.SearchBar=void 0;const o=t(997),n=t(905),a=t(864);r.SearchBar=function({value:e,onChange:r,onClose:t,results:s,placeholder:d,hideBorder:i,asTopBar:u}){const l=(0,o.jsx)(n.TextField,{label:"Search",labelHidden:!0,autoComplete:"off",value:e,onChange:r,onClearButtonClick:t,clearButton:!0,placeholder:d||"Search",prefix:(0,o.jsx)(n.Icon,{source:a.SearchMinor}),borderless:i||u}),c=s?(0,o.jsx)(n.Popover,{autofocusTarget:"none",active:e?.length>0,activator:l,onClose:t,fullWidth:!0,children:s}):l;return u?(0,o.jsx)(n.Box,{background:"bg",paddingInlineStart:"5",paddingInlineEnd:"5",paddingBlockStart:"2",paddingBlockEnd:"2",borderStyle:"solid",borderColor:"border-subdued",borderBlockEndWidth:"1",children:(0,o.jsx)(n.HorizontalStack,{align:"center",children:(0,o.jsx)(n.Box,{width:"100%",maxWidth:"41.375rem",children:c})})}):c}},806:(e,r,t)=>{Object.defineProperty(r,"__esModule",{value:!0}),r.TwoColumnCard=void 0;const o=t(997),n=t(905),a=t(689);function s(e){return(0,a.useMemo)((()=>{let r=e||{};return{component:r.component||null,size:r.size||"oneHalf",bg:r.bg,flush:r.flush||!1}}),[e])}r.TwoColumnCard=function(e){const{left:r,right:t}=e,{component:a,size:d,bg:i,flush:u}=s(r),{component:l,size:c,bg:p,flush:f}=s(t);return(0,o.jsx)(n.LegacyCard,{subdued:!0,children:(0,o.jsxs)(n.HorizontalGrid,{columns:[d,c],children:[(0,o.jsx)(n.Box,{minHeight:"100%",borderRadiusStartStart:"2",borderRadiusEndStart:"2",background:i||"bg-subdued",padding:u?void 0:"4",children:a}),(0,o.jsx)(n.Box,{background:p||"bg",borderColor:"border-subdued",borderInlineStartWidth:"1",borderRadiusStartEnd:"2",borderRadiusEndEnd:"2",padding:f?void 0:"4",children:l})]})})}},821:function(e,r,t){var o=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(r,"__esModule",{value:!0}),r.useMoment=void 0;const n=o(t(245));r.useMoment=function(){n.default.updateLocale("en",{calendar:{sameDay:"HH:mm",nextDay:"[Tomorrow at] HH:mm",nextWeek:"dddd",lastDay:"[Yesterday at] HH:mm",lastWeek:"[Last] dddd",sameElse:"MMM DD YYYY"}})}},92:(e,r,t)=>{Object.defineProperty(r,"__esModule",{value:!0}),r.usePaginateController=void 0;const o=t(689);r.usePaginateController=function(e,r={}){const{perPage:t}=(0,o.useMemo)((()=>{const e={};return e.perPage=r.perPage||50,e}),[r]),[n,a]=(0,o.useState)({first:t}),s=e(n),[{data:d}]=s,i=(0,o.useCallback)((()=>{a({first:t,after:d.endCursor})}),[d,t]),u=(0,o.useCallback)((()=>{a({last:t,before:d.startCursor})}),[d,t]);return[s,{hasNext:d?.hasNextPage,hasPrevious:d?.hasPreviousPage,onNext:i,onPrevious:u}]}},592:(e,r,t)=>{Object.defineProperty(r,"__esModule",{value:!0}),r.useToast=void 0;const o=t(997),n=t(689),a=t(905);r.useToast=function(){const[e,r]=(0,n.useState)(null);return[e,(0,n.useCallback)((({message:e,error:t})=>{r((0,o.jsx)(a.Toast,{error:!!t,content:t||e+"",onDismiss:()=>r(null)}))}),[])]}},629:function(e,r,t){var o=this&&this.__createBinding||(Object.create?function(e,r,t,o){void 0===o&&(o=t);var n=Object.getOwnPropertyDescriptor(r,t);n&&!("get"in n?!r.__esModule:n.writable||n.configurable)||(n={enumerable:!0,get:function(){return r[t]}}),Object.defineProperty(e,o,n)}:function(e,r,t,o){void 0===o&&(o=t),e[o]=r[t]}),n=this&&this.__exportStar||function(e,r){for(var t in e)"default"===t||Object.prototype.hasOwnProperty.call(r,t)||o(r,e,t)};Object.defineProperty(r,"__esModule",{value:!0}),n(t(806),r),n(t(263),r),n(t(842),r),n(t(92),r),n(t(821),r),n(t(592),r),n(t(559),r)},559:(e,r,t)=>{Object.defineProperty(r,"__esModule",{value:!0}),r.extractIDFromGUID=r.reduceEdges=r.isOnSale=void 0;const o=t(126);r.isOnSale=function({price:e,compareAtPrice:r}){return!(!r||!e)&&(0,o.unformat)(r+"")>(0,o.unformat)(e+"")},r.reduceEdges=function(e,r=void 0){return e?.edges?.length?e.edges.map((({node:e})=>r?r(e):e)):[]},r.extractIDFromGUID=function(e){if(!e)return e;const r=e.split("/").pop();return r?parseInt(r):e}},905:e=>{e.exports=require("@shopify/polaris")},864:e=>{e.exports=require("@shopify/polaris-icons")},126:e=>{e.exports=require("accounting")},245:e=>{e.exports=require("moment")},689:e=>{e.exports=require("react")},997:e=>{e.exports=require("react/jsx-runtime")}},r={};return function t(o){var n=r[o];if(void 0!==n)return n.exports;var a=r[o]={exports:{}};return e[o].call(a.exports,a,a.exports,t),a.exports}(629)})()));
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define("baltzar-gadget", [], factory);
+	else if(typeof exports === 'object')
+		exports["baltzar-gadget"] = factory();
+	else
+		root["baltzar-gadget"] = factory();
+})((() => {
+            if (typeof self !== 'undefined') {
+                return self;
+            } else if (typeof window !== 'undefined') {
+                return window;
+            } else if (typeof global !== 'undefined') {
+                return global;
+            } else {
+                return Function('return this')();
+            }
+        })(), () => {
+return /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	var __webpack_modules__ = ({
+
+/***/ 842:
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.EmptyState = void 0;
+const jsx_runtime_1 = __webpack_require__(997);
+const polaris_1 = __webpack_require__(905);
+function EmptyState({ children, ...props }) {
+    return (0, jsx_runtime_1.jsx)(polaris_1.Box, { padding: '5', ...props, children: (0, jsx_runtime_1.jsx)(polaris_1.Text, { as: 'h2', variant: 'headingMd', children: children }) });
+}
+exports.EmptyState = EmptyState;
+
+
+/***/ }),
+
+/***/ 263:
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.SearchBar = void 0;
+const jsx_runtime_1 = __webpack_require__(997);
+const polaris_1 = __webpack_require__(905);
+const polaris_icons_1 = __webpack_require__(864);
+function SearchBar({ value, onChange, onClose, results, placeholder, hideBorder, asTopBar }) {
+    const field = (0, jsx_runtime_1.jsx)(polaris_1.TextField, { label: 'Search', labelHidden: true, autoComplete: 'off', value: value, onChange: onChange, onClearButtonClick: onClose, clearButton: true, placeholder: placeholder || 'Search', prefix: (0, jsx_runtime_1.jsx)(polaris_1.Icon, { source: polaris_icons_1.SearchMinor }), borderless: hideBorder || asTopBar });
+    const popOver = results ? (0, jsx_runtime_1.jsx)(polaris_1.Popover, { autofocusTarget: 'none', active: value?.length > 0, activator: field, onClose: onClose, fullWidth: true, children: results }) : field;
+    if (asTopBar) {
+        return (0, jsx_runtime_1.jsx)(polaris_1.Box, { background: 'bg', paddingInlineStart: '5', paddingInlineEnd: '5', paddingBlockStart: '2', paddingBlockEnd: '2', borderStyle: 'solid', borderColor: 'border-subdued', borderBlockEndWidth: '1', children: (0, jsx_runtime_1.jsx)(polaris_1.HorizontalStack, { align: 'center', children: (0, jsx_runtime_1.jsx)(polaris_1.Box, { width: '100%', maxWidth: '41.375rem', children: popOver }) }) });
+    }
+    return popOver;
+}
+exports.SearchBar = SearchBar;
+
+
+/***/ }),
+
+/***/ 806:
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.TwoColumnCard = void 0;
+const jsx_runtime_1 = __webpack_require__(997);
+const polaris_1 = __webpack_require__(905);
+const react_1 = __webpack_require__(689);
+function useInitComponent(column) {
+    return (0, react_1.useMemo)(() => {
+        let _column = column || {};
+        return {
+            component: _column.component || null,
+            size: _column.size || 'oneHalf',
+            bg: _column.bg,
+            flush: _column.flush || false
+        };
+    }, [column]);
+}
+function TwoColumnCard(props) {
+    const { left, right } = props;
+    const { component: leftComponent, size: leftSize, bg: leftBg, flush: leftFlush } = useInitComponent(left);
+    const { component: rightComponent, size: rightSize, bg: rightBg, flush: rightFlush } = useInitComponent(right);
+    return (0, jsx_runtime_1.jsx)(polaris_1.LegacyCard, { subdued: true, children: (0, jsx_runtime_1.jsxs)(polaris_1.HorizontalGrid, { columns: [leftSize, rightSize], children: [(0, jsx_runtime_1.jsx)(polaris_1.Box, { minHeight: '100%', borderRadiusStartStart: '2', borderRadiusEndStart: '2', background: leftBg || 'bg-subdued', padding: leftFlush ? undefined : '4', children: leftComponent }), (0, jsx_runtime_1.jsx)(polaris_1.Box, { background: rightBg || 'bg', borderColor: 'border-subdued', borderInlineStartWidth: '1', borderRadiusStartEnd: '2', borderRadiusEndEnd: '2', padding: rightFlush ? undefined : '4', children: rightComponent })] }) });
+}
+exports.TwoColumnCard = TwoColumnCard;
+
+
+/***/ }),
+
+/***/ 821:
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.useMoment = void 0;
+const moment_1 = __importDefault(__webpack_require__(245));
+function useMoment() {
+    moment_1.default.updateLocale('en', {
+        calendar: {
+            sameDay: 'HH:mm',
+            nextDay: '[Tomorrow at] HH:mm',
+            nextWeek: 'dddd',
+            lastDay: '[Yesterday at] HH:mm',
+            lastWeek: '[Last] dddd',
+            sameElse: 'MMM DD YYYY'
+        }
+    });
+}
+exports.useMoment = useMoment;
+
+
+/***/ }),
+
+/***/ 92:
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.usePaginateController = void 0;
+const react_1 = __webpack_require__(689);
+function usePaginateController(generator, parameters = {}) {
+    const { perPage } = (0, react_1.useMemo)(() => {
+        const extracted = {};
+        extracted.perPage = parameters.perPage || 50;
+        // TODO offset based pagination not available yet.
+        //extracted.offset = parameters.start ? parameters.start * extracted.perPage : undefined
+        return extracted;
+    }, [parameters]);
+    const [cursor, setCursor] = (0, react_1.useState)({ first: perPage });
+    // using Gadget React hooks to fetch records of inventoryTransferReceipt
+    const paginatedHook = generator(cursor);
+    const [{ data }] = paginatedHook;
+    const getNextPage = (0, react_1.useCallback)(() => {
+        // use first + after to page forwards
+        setCursor({ first: perPage, after: data.endCursor });
+    }, [data, perPage]);
+    const getPreviousPage = (0, react_1.useCallback)(() => {
+        // use last + before to page backwards
+        setCursor({ last: perPage, before: data.startCursor });
+    }, [data, perPage]);
+    return [
+        paginatedHook,
+        {
+            hasNext: data?.hasNextPage,
+            hasPrevious: data?.hasPreviousPage,
+            onNext: getNextPage,
+            onPrevious: getPreviousPage
+        }
+    ];
+}
+exports.usePaginateController = usePaginateController;
+
+
+/***/ }),
+
+/***/ 592:
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.useToast = void 0;
+const jsx_runtime_1 = __webpack_require__(997);
+const react_1 = __webpack_require__(689);
+const polaris_1 = __webpack_require__(905);
+function useToast() {
+    const [toast, setToast] = (0, react_1.useState)(null);
+    const showToast = (0, react_1.useCallback)(({ message, error }) => {
+        setToast((0, jsx_runtime_1.jsx)(polaris_1.Toast, { error: !!error, content: error ? error : message + '', onDismiss: () => setToast(null) }));
+    }, []);
+    return [toast, showToast];
+}
+exports.useToast = useToast;
+
+
+/***/ }),
+
+/***/ 629:
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __exportStar = (this && this.__exportStar) || function(m, exports) {
+    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
+};
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+__exportStar(__webpack_require__(806), exports);
+__exportStar(__webpack_require__(263), exports);
+__exportStar(__webpack_require__(842), exports);
+__exportStar(__webpack_require__(92), exports);
+__exportStar(__webpack_require__(821), exports);
+__exportStar(__webpack_require__(592), exports);
+__exportStar(__webpack_require__(559), exports);
+
+
+/***/ }),
+
+/***/ 559:
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.extractIDFromGUID = exports.reduceEdges = exports.isOnSale = void 0;
+const accounting_1 = __webpack_require__(126);
+function isOnSale({ price, compareAtPrice }) {
+    if (!compareAtPrice || !price) {
+        return false;
+    }
+    return (0, accounting_1.unformat)(compareAtPrice + '') > (0, accounting_1.unformat)(price + '');
+}
+exports.isOnSale = isOnSale;
+function reduceEdges(entity, callback = undefined) {
+    if (!entity?.edges?.length) {
+        return [];
+    }
+    return entity.edges.map(({ node }) => {
+        if (!!callback) {
+            return callback(node);
+        }
+        return node;
+    });
+}
+exports.reduceEdges = reduceEdges;
+function extractIDFromGUID(guid) {
+    if (!guid) {
+        return guid;
+    }
+    const parts = guid.split('/');
+    const id = parts.pop();
+    if (!id) {
+        return guid;
+    }
+    return parseInt(id);
+}
+exports.extractIDFromGUID = extractIDFromGUID;
+
+
+/***/ }),
+
+/***/ 905:
+/***/ ((module) => {
+
+module.exports = require("@shopify/polaris");
+
+/***/ }),
+
+/***/ 864:
+/***/ ((module) => {
+
+module.exports = require("@shopify/polaris-icons");
+
+/***/ }),
+
+/***/ 126:
+/***/ ((module) => {
+
+module.exports = require("accounting");
+
+/***/ }),
+
+/***/ 245:
+/***/ ((module) => {
+
+module.exports = require("moment");
+
+/***/ }),
+
+/***/ 689:
+/***/ ((module) => {
+
+module.exports = require("react");
+
+/***/ }),
+
+/***/ 997:
+/***/ ((module) => {
+
+module.exports = require("react/jsx-runtime");
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module is referenced by other modules so it can't be inlined
+/******/ 	var __webpack_exports__ = __webpack_require__(629);
+/******/ 	
+/******/ 	return __webpack_exports__;
+/******/ })()
+;
+});
