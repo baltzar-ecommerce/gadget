@@ -3,8 +3,6 @@ type Size = 'oneThird' | 'oneHalf' | 'twoThirds';
 interface CardColumn {
     component: ReactNode;
     size?: Size;
-    bg?: any;
-    flush?: boolean;
 }
 interface TwoColumnCardProps {
     left: CardColumn;

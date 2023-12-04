@@ -1,4 +1,4 @@
-import { Box, InlineGrid, Card } from '@shopify/polaris'
+import { Card, InlineGrid } from '@shopify/polaris'
 import { ReactNode, useMemo } from 'react'
 
 type Size = 'oneThird' | 'oneHalf' | 'twoThirds'
@@ -6,8 +6,6 @@ type Size = 'oneThird' | 'oneHalf' | 'twoThirds'
 interface CardColumn {
     component: ReactNode,
     size?: Size,
-    bg?: any
-    flush?: boolean
 }
 
 interface TwoColumnCardProps {
