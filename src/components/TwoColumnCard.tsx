@@ -1,5 +1,5 @@
-import {Box, InlineGrid, Card} from '@shopify/polaris'
-import {ReactNode, useMemo} from 'react'
+import { Box, InlineGrid, Card } from '@shopify/polaris'
+import { ReactNode, useMemo } from 'react'
 
 type Size = 'oneThird' | 'oneHalf' | 'twoThirds'
 
@@ -23,9 +23,7 @@ function useInitComponent(column: CardColumn) {
 
         return {
             component: _column.component || null,
-            size:      _column.size || 'oneHalf',
-            bg:        _column.bg,
-            flush:     _column.flush || false
+            size: _column.size || 'oneHalf',
         }
 
     }, [column])
@@ -34,30 +32,15 @@ function useInitComponent(column: CardColumn) {
 
 export function TwoColumnCard(props: TwoColumnCardProps) {
 
-    const {left, right} = props
+    const { left, right } = props
 
-    const {component: leftComponent, size: leftSize, bg: leftBg, flush: leftFlush}     = useInitComponent(left)
-    const {component: rightComponent, size: rightSize, bg: rightBg, flush: rightFlush} = useInitComponent(right)
+    const { component: leftComponent, size: leftSize } = useInitComponent(left)
+    const { component: rightComponent, size: rightSize } = useInitComponent(right)
 
-    return <Card  background="bg-surface-secondary">
+    return <Card background="bg-surface-secondary" padding={'0'}>
         <InlineGrid columns={[leftSize, rightSize]}>
-            <Box
-                minHeight={'100%'}
-                borderStartStartRadius={'200'}
-                borderEndStartRadius={'200'}
-                background={leftBg || 'bg-surface-secondary'}
-                padding={leftFlush ? undefined : '400'}>
-                {leftComponent}
-            </Box>
-            <Box
-                background={rightBg || 'bg'}
-                borderColor={'border-secondary'}
-                borderInlineStartWidth={'100'}
-                borderStartEndRadius={'200'}
-                borderEndEndRadius={'200'}
-                padding={rightFlush ? undefined : '400'}>
-                {rightComponent}
-            </Box>
+            {leftComponent}
+            {rightComponent}
         </InlineGrid>
     </Card>
 }

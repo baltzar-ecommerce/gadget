@@ -1,6 +1,6 @@
 {
   "name": "@baltzar-tech/gadget",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/types/index.d.ts",
