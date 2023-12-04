@@ -1,4 +1,4 @@
-import {Box, HorizontalGrid, LegacyCard} from '@shopify/polaris'
+import {Box, InlineGrid, Card} from '@shopify/polaris'
 import {ReactNode, useMemo} from 'react'
 
 type Size = 'oneThird' | 'oneHalf' | 'twoThirds'
@@ -39,25 +39,25 @@ export function TwoColumnCard(props: TwoColumnCardProps) {
     const {component: leftComponent, size: leftSize, bg: leftBg, flush: leftFlush}     = useInitComponent(left)
     const {component: rightComponent, size: rightSize, bg: rightBg, flush: rightFlush} = useInitComponent(right)
 
-    return <LegacyCard subdued>
-        <HorizontalGrid columns={[leftSize, rightSize]}>
+    return <Card  background="bg-surface-secondary">
+        <InlineGrid columns={[leftSize, rightSize]}>
             <Box
                 minHeight={'100%'}
-                borderRadiusStartStart={'2'}
-                borderRadiusEndStart={'2'}
-                background={leftBg || 'bg-subdued'}
-                padding={leftFlush ? undefined : '4'}>
+                borderStartStartRadius={'200'}
+                borderEndStartRadius={'200'}
+                background={leftBg || 'bg-surface-secondary'}
+                padding={leftFlush ? undefined : '400'}>
                 {leftComponent}
             </Box>
             <Box
                 background={rightBg || 'bg'}
-                borderColor={'border-subdued'}
-                borderInlineStartWidth={'1'}
-                borderRadiusStartEnd={'2'}
-                borderRadiusEndEnd={'2'}
-                padding={rightFlush ? undefined : '4'}>
+                borderColor={'border-secondary'}
+                borderInlineStartWidth={'100'}
+                borderStartEndRadius={'200'}
+                borderEndEndRadius={'200'}
+                padding={rightFlush ? undefined : '400'}>
                 {rightComponent}
             </Box>
-        </HorizontalGrid>
-    </LegacyCard>
+        </InlineGrid>
+    </Card>
 }

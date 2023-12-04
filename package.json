@@ -1,6 +1,6 @@
 {
   "name": "@baltzar-tech/gadget",
-  "version": "2.0.2",
+  "version": "3.0.0",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/types/index.d.ts",
@@ -22,7 +22,7 @@
   ],
   "dependencies": {
     "@gadgetinc/react": "^0.12.1",
-    "@shopify/polaris": "10.45.0",
+    "@shopify/polaris": "^12.1.1",
     "accounting": "^0.4.1",
     "moment": "^2.29.4",
     "react": "^18.2.0",

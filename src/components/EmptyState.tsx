@@ -1,9 +1,9 @@
-import {Box, BoxProps, Text} from '@shopify/polaris'
+import { Box, BoxProps, Text } from '@shopify/polaris'
 
 interface Props extends BoxProps {
-    children: string,
+    children: string | string[],
 }
 
-export function EmptyState({children, ...props}: Props) {
-    return <Box padding={'5'} {...props}><Text as={'h2'} variant={'headingMd'}>{children}</Text></Box>
+export function EmptyState({ children, ...props }: Props) {
+    return <Box padding={'500'} {...props}><Text as={'h2'} variant={'headingMd'}>{children}</Text></Box>
 }

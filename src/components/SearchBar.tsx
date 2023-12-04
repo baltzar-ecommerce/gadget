@@ -1,6 +1,6 @@
-import {Box, HorizontalStack, Icon, Popover, TextField} from "@shopify/polaris";
-import {SearchMinor} from "@shopify/polaris-icons";
-import {ReactNode} from 'react'
+import { Box, Icon, InlineStack, Popover, TextField } from "@shopify/polaris";
+import { SearchMinor } from "@shopify/polaris-icons";
+import { ReactNode } from 'react'
 
 interface Props {
     value: string
@@ -12,7 +12,7 @@ interface Props {
     asTopBar?: boolean
 }
 
-export function SearchBar({value, onChange, onClose, results, placeholder, hideBorder, asTopBar}: Props) {
+export function SearchBar({ value, onChange, onClose, results, placeholder, hideBorder, asTopBar }: Props) {
 
     const field = <TextField
         label={'Search'}
@@ -23,8 +23,8 @@ export function SearchBar({value, onChange, onClose, results, placeholder, hideB
         onClearButtonClick={onClose}
         clearButton
         placeholder={placeholder || 'Search'}
-        prefix={<Icon source={SearchMinor}/>}
-        borderless={hideBorder || asTopBar}
+        prefix={<Icon source={SearchMinor} />}
+        variant={hideBorder || asTopBar ? 'borderless' : undefined}
     />
 
     const popOver = results ? <Popover
@@ -38,17 +38,17 @@ export function SearchBar({value, onChange, onClose, results, placeholder, hideB
     if (asTopBar) {
         return <Box
             background={'bg'}
-            paddingInlineStart={'5'}
-            paddingInlineEnd={'5'}
-            paddingBlockStart={'2'}
-            paddingBlockEnd={'2'}
+            paddingInlineStart={'500'}
+            paddingInlineEnd={'500'}
+            paddingBlockStart={'200'}
+            paddingBlockEnd={'200'}
             borderStyle={'solid'}
-            borderColor={'border-subdued'}
-            borderBlockEndWidth={'1'}
+            borderColor={'border-secondary'}
+            borderBlockEndWidth={'100'}
         >
-            <HorizontalStack align={'center'}>
+            <InlineStack align={'center'}>
                 <Box width={'100%'} maxWidth={'41.375rem'}>{popOver}</Box>
-            </HorizontalStack>
+            </InlineStack>
         </Box>
     }
 
