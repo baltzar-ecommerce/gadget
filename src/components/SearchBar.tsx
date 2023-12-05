@@ -37,14 +37,14 @@ export function SearchBar({ value, onChange, onClose, results, placeholder, hide
 
     if (asTopBar) {
         return <Box
-            background={'bg'}
+            background={'bg-surface'}
             paddingInlineStart={'500'}
             paddingInlineEnd={'500'}
             paddingBlockStart={'200'}
             paddingBlockEnd={'200'}
             borderStyle={'solid'}
             borderColor={'border-secondary'}
-            borderBlockEndWidth={'100'}
+            borderBlockEndWidth={'025'}
         >
             <InlineStack align={'center'}>
                 <Box width={'100%'} maxWidth={'41.375rem'}>{popOver}</Box>
