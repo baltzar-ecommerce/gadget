@@ -16,17 +16,13 @@ export function isOnSale({ price, compareAtPrice }: UtilityProps) {
 
 type Entity<T = any> = T extends infer R ? { edges: { node: R }[] } : { edges: { node: T }[] }
 
-export function reduceEdges<T, U>(entity: Entity<T>, callback?: (node: T) => U) {
+export function reduceEdges<T>(entity: Entity<T>) {
 
     if (!entity?.edges.length) {
         return [] as T[]
     }
 
-    if (!!callback) {
-        return entity.edges.map(({ node }) => callback(node as T)) as U[]
-    } else {
-        return entity.edges.map(({ node }) => node) as T[]
-    }
+    return entity.edges.map(({ node }) => node) as T[]
 
 }
 

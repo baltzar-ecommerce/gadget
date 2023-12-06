@@ -12,6 +12,6 @@ type Entity<T = any> = T extends infer R ? {
         node: T;
     }[];
 };
-export declare function reduceEdges<T, U>(entity: Entity<T>, callback?: (node: T) => U): T[] | U[];
+export declare function reduceEdges<T>(entity: Entity<T>): T[];
 export declare function extractIDFromGUID(guid?: string): string | number | undefined;
 export {};
