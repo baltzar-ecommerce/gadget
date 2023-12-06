@@ -3,11 +3,7 @@ interface UtilityProps {
     compareAtPrice?: number | string | null;
 }
 export declare function isOnSale({ price, compareAtPrice }: UtilityProps): boolean;
-type Entity<T = any> = T extends infer R ? {
-    edges: {
-        node: R;
-    }[];
-} : {
+type Entity<T = any> = {
     edges: {
         node: T;
     }[];

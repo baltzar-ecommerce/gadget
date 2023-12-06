@@ -14,11 +14,11 @@ export function isOnSale({ price, compareAtPrice }: UtilityProps) {
     return unformat(compareAtPrice + '') > unformat(price + '')
 }
 
-type Entity<T = any> = T extends infer R ? { edges: { node: R }[] } : { edges: { node: T }[] }
+type Entity<T = any> = { edges: { node: T }[] }
 
 export function reduceEdges<T>(entity: Entity<T>) {
 
-    if (!entity?.edges.length) {
+    if (!entity?.edges?.length) {
         return [] as T[]
     }
 
